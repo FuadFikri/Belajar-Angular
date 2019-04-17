@@ -8,6 +8,15 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { RekeningComponent } from './rekening/rekening.component';
 import { TransferComponent } from './transfer/transfer.component';
 import { ProfileComponent } from './profile/profile.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const routingAplikasi: Routes = [
+  { path: 'rekening', component: RekeningComponent },
+  { path: 'transfer', component: TransferComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: '**', component: WelcomeComponent },
+  // { path: '**', component: PageNotFoundComponent },
+];
 
 @NgModule({
   declarations: [
@@ -21,7 +30,8 @@ import { ProfileComponent } from './profile/profile.component';
   ],
   imports: [
     BrowserModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    RouterModule.forRoot(routingAplikasi)
   ],
   providers: [],
   bootstrap: [AppComponent]
