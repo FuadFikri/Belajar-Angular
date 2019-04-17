@@ -9,13 +9,13 @@ import { RekeningComponent } from './rekening/rekening.component';
 import { TransferComponent } from './transfer/transfer.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RouterModule, Routes } from '@angular/router';
+import { RekeningModule } from './rekening/rekening.module'; //yang diimport modulenya bukan compoenntnya
 
 const routingAplikasi: Routes = [
-  { path: 'rekening', component: RekeningComponent },
+  { path: 'rekening', redirectTo: '/rekening', pathMatch:'full' },
   { path: 'transfer', component: TransferComponent },
   { path: 'profile', component: ProfileComponent },
   { path: '**', component: WelcomeComponent },
-  // { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
@@ -31,7 +31,8 @@ const routingAplikasi: Routes = [
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
-    RouterModule.forRoot(routingAplikasi)
+    RouterModule.forRoot(routingAplikasi),
+    RekeningModule
   ],
   providers: [],
   bootstrap: [AppComponent]
