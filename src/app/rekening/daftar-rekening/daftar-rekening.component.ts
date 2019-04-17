@@ -13,8 +13,9 @@ export class DaftarRekeningComponent implements OnInit {
   daftarRekening:Rekening[];
 
   constructor(private rekeningService: RekeningService) { 
-    this.daftarRekening = rekeningService.getDataRekening();
-    console.log(this.daftarRekening);
+    rekeningService.getDataRekening()
+    .then(hasil => 
+      this.daftarRekening = hasil);
   }
 
   ngOnInit() {
