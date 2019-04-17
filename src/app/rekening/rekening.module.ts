@@ -21,11 +21,11 @@ const routingRekening: Routes = [
     RouterModule.forChild(routingRekening),
     MDBBootstrapModule.forRoot()
   ],
-  exports:[
+  exports: [
     PilihanRekeningComponent
-  ] 
+  ],
   // REUSABLE COMPONENT
-  //export pilihanrekeningcomponent biar bisa dipake dimodule lain. dalam hal ini dipake di transfer.
+  // export pilihanrekeningcomponent biar bisa dipake dimodule lain. dalam hal ini dipake di transfer.
   // karena beda module, maka harus di export
 })
 export class RekeningModule { }

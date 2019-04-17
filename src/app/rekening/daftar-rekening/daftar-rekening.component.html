@@ -1,4 +1,20 @@
-<p>
-  daftar-rekening works!
-</p>
-<pilihan-rekening></pilihan-rekening>
+<h1>Daftar Rekening</h1>
+
+<table mdbTable hover="true">
+    <thead>
+      <tr>
+        <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr mdbTableCol *ngFor="let rek of daftarRekening">
+        <th scope="row">{{rek.id}}</th>
+        <td>{{rek.nama}}</td>
+        <td>
+            <button type="button" (click)="showDetail(rek)" mdbBtn color="primary" size="sm" mdbWavesEffect>
+                <span> Detail</span>
+            </button>
+          </td>
+      </tr>
+    </tbody>
+  </table>  
