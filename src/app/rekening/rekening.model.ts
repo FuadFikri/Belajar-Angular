@@ -1,11 +1,11 @@
 export class Rekening {
     id: string;
-    kode: string;
+    nomor: string;
     nama: string;
 
-    constructor(id: string, kode:string, nama:string){
+    constructor(id: string, nomor:string, nama:string){
         this.id = id;
-        this.kode=kode;
+        this.nomor=nomor;
         this.nama=nama;
     }
 }

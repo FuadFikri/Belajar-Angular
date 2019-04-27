@@ -9,7 +9,7 @@
     <h2 *ngIf="errorMsg" style="color:red">{{errorMsg}}</h2>
     <tbody>
       <tr mdbTableCol *ngFor="let rek of daftarRekening">
-        <th scope="row">{{rek.id}}</th>
+        <th scope="row">{{rek.nomor}}</th>
         <td>{{rek.nama}}</td>
         <td>
             <button type="button" (click)="showDetail(rek)" mdbBtn color="primary" size="sm" mdbWavesEffect>
