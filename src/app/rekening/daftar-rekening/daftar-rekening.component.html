@@ -6,6 +6,7 @@
         <th *ngFor="let head of headElements" scope="col">{{head}} </th>
       </tr>
     </thead>
+    <h2 *ngIf="errorMsg" style="color:red">{{errorMsg}}</h2>
     <tbody>
       <tr mdbTableCol *ngFor="let rek of daftarRekening">
         <th scope="row">{{rek.id}}</th>
