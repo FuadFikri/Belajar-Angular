@@ -1,4 +1,10 @@
 <p>
   saldo-rekening works!
 </p>
-<pilihan-rekening></pilihan-rekening>
+<pilihan-rekening (pilihanRekening)="pilihRekening($event)"></pilihan-rekening>
+
+<div *ngIf="rekeningDipilih">
+  {{rekeningDipilih.id}}
+  {{rekeningDipilih.nomor}}
+  {{rekeningDipilih.nama}}
+</div>

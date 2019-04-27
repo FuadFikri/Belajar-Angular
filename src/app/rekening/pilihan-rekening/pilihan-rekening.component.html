@@ -7,6 +7,6 @@
 
 
     <div class="dropdown-menu dropdown-primary">
-      <a class="dropdown-item"  *ngFor="let r of daftarRekening" href="#" >{{r.nomor}}  - {{r.nama}}</a>
+      <a class="dropdown-item"  *ngFor="let r of daftarRekening" (click)="pilihRekening(r)" >{{r.nomor}}  - {{r.nama}}</a>
     </div>
   </div>
