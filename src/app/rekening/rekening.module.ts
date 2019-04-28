@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MutasiRekeningComponent } from './mutasi-rekening/mutasi-rekening.component';
 import { PilihanRekeningComponent } from './pilihan-rekening/pilihan-rekening.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { DetailRekeningComponent } from './detail-rekening/detail-rekening.component';
 
 const routingRekening: Routes = [
   {path: 'rekening/list', component: DaftarRekeningComponent},
@@ -15,7 +16,7 @@ const routingRekening: Routes = [
   {path: 'rekening/**', component: RekeningComponent}
 ];
 @NgModule({
-  declarations: [DaftarRekeningComponent, SaldoRekeningComponent, MutasiRekeningComponent, PilihanRekeningComponent],
+  declarations: [DaftarRekeningComponent, SaldoRekeningComponent, MutasiRekeningComponent, PilihanRekeningComponent, DetailRekeningComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routingRekening),

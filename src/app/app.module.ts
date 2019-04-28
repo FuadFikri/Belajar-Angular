@@ -11,10 +11,11 @@ import { ProfileComponent } from './profile/profile.component';
 import { RouterModule, Routes } from '@angular/router';
 import { RekeningModule } from './rekening/rekening.module'; //yang diimport modulenya bukan compoenntnya
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+import { TransferModule } from './transfer/transfer.module';
 
 const routingAplikasi: Routes = [
   { path: 'rekening', redirectTo: '/rekening', pathMatch:'full' },
-  { path: 'transfer', component: TransferComponent },
+  { path: 'transfer', redirectTo: '/transfer', pathMatch: 'full' },
   { path: 'profile', component: ProfileComponent },
   { path: '**', component: WelcomeComponent },
 ];
@@ -34,6 +35,7 @@ const routingAplikasi: Routes = [
     MDBBootstrapModule.forRoot(),
     RouterModule.forRoot(routingAplikasi),
     RekeningModule,
+    TransferModule,
     HttpClientModule,
     HttpClientJsonpModule
   ],
