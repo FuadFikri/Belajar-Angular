@@ -5,6 +5,7 @@ import { KonfirmasiTransferComponent } from './konfirmasi-transfer/konfirmasi-tr
 import { Routes, RouterModule } from '@angular/router';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { RekeningModule } from '../rekening/rekening.module';
+import { FormsModule } from '@angular/forms';
 
 const routingTransfer: Routes = [
   {path: 'transfer/konfirmasi', component: KonfirmasiTransferComponent},
@@ -16,7 +17,8 @@ const routingTransfer: Routes = [
     CommonModule,
     RouterModule.forChild(routingTransfer),
     MDBBootstrapModule.forRoot(),
-    RekeningModule
+    RekeningModule,
+    FormsModule //untuk ngModel
   ]
 })
 export class TransferModule { }
