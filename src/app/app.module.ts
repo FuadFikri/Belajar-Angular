@@ -12,11 +12,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { RekeningModule } from './rekening/rekening.module'; //yang diimport modulenya bukan compoenntnya
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { TransferModule } from './transfer/transfer.module';
+import { LoginComponent } from './login/login.component';
 
 const routingAplikasi: Routes = [
   { path: 'rekening', redirectTo: '/rekening', pathMatch:'full' },
   { path: 'transfer', redirectTo: '/transfer', pathMatch: 'full' },
   { path: 'profile', component: ProfileComponent },
+  { path: 'login', component: LoginComponent },
   { path: '**', component: WelcomeComponent },
 ];
 
@@ -28,7 +30,8 @@ const routingAplikasi: Routes = [
     WelcomeComponent,
     RekeningComponent,
     TransferComponent,
-    ProfileComponent
+    ProfileComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
