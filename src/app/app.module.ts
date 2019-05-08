@@ -13,11 +13,14 @@ import { RekeningModule } from './rekening/rekening.module'; //yang diimport mod
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { TransferModule } from './transfer/transfer.module';
 import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './ceklogin-service';
+import { ProgressIndicatorService } from './progress-indicator.service';
+import { AuthService } from './auth.service';
 
 const routingAplikasi: Routes = [
-  { path: 'rekening', redirectTo: '/rekening', pathMatch:'full' },
-  { path: 'transfer', redirectTo: '/transfer', pathMatch: 'full' },
-  { path: 'profile', component: ProfileComponent },
+  { path: 'rekening', redirectTo: '/rekening', pathMatch:'full', canActivate:[AuthGuard]  },
+  { path: 'transfer', redirectTo: '/transfer', pathMatch: 'full', canActivate:[AuthGuard]  },
+  { path: 'profile', component: ProfileComponent, pathMatch:'full', canActivate:[AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: '**', component: WelcomeComponent },
 ];
@@ -42,7 +45,7 @@ const routingAplikasi: Routes = [
     HttpClientModule,
     HttpClientJsonpModule
   ],
-  providers: [],
+  providers: [AuthGuard, ProgressIndicatorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

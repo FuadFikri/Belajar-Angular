@@ -8,11 +8,13 @@ import { MutasiRekeningComponent } from './mutasi-rekening/mutasi-rekening.compo
 import { PilihanRekeningComponent } from './pilihan-rekening/pilihan-rekening.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { DetailRekeningComponent } from './detail-rekening/detail-rekening.component';
+import { AuthGuard } from '../ceklogin-service';
+import { AuthService } from '../auth.service';
 
 const routingRekening: Routes = [
-  {path: 'rekening/list', component: DaftarRekeningComponent},
-  {path: 'rekening/saldo', component: SaldoRekeningComponent},
-  {path: 'rekening/mutasi', component: MutasiRekeningComponent},
+  {path: 'rekening/list', component: DaftarRekeningComponent, canActivate:[AuthGuard] },
+  {path: 'rekening/saldo', component: SaldoRekeningComponent, canActivate:[AuthGuard] },
+  {path: 'rekening/mutasi', component: MutasiRekeningComponent, canActivate:[AuthGuard] },
   {path: 'rekening/**', component: RekeningComponent}
 ];
 @NgModule({
@@ -25,6 +27,7 @@ const routingRekening: Routes = [
   exports: [
     PilihanRekeningComponent
   ],
+  providers: [AuthGuard, AuthService]
   // REUSABLE COMPONENT
   // export pilihanrekeningcomponent biar bisa dipake dimodule lain. dalam hal ini dipake di transfer.
   // karena beda module, maka harus di export
